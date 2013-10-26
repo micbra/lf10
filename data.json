@@ -1,0 +1,164 @@
+{
+	"infographs" : {
+		"music" : {
+			"name": "Musikmarkt",
+			"color": "78bbb3",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"social" : {
+			"name": "Social Media",
+			"color": "46bde9",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"bike" : {
+			"name": "e-Bikes",
+			"color": "85b800",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"car" : {
+			"name": "Automobilmarkt",
+			"color": "dc6646",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"eco" : {
+			"name": "Ökoenergie",
+			"color": "ee9100",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"phone" : {
+			"name": "Handy/Smartphone",
+			"color": "00b0bc",
+			"projects": [
+				{
+					"image": "files/braunegger_hackel.jpg",
+					"url": "projects/braunegger_hackel",
+					"authors": "Michael Braunegger,Christian Hackel"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"job" : {
+			"name": "Berufsausbildung",
+			"color": "f7b183",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"paper" : {
+			"name": "Papier",
+			"color": "38aa33",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"health" : {
+			"name": "Gesundheit",
+			"color": "af5fa2",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		},
+		"youth" : {
+			"name": "Jugend",
+			"color": "9c0700",
+			"projects": [
+				{
+					"image": "",
+					"url": "url1",
+					"authors": "authors1"
+				},
+				{
+					"image": "",
+					"url": "url2",
+					"authors": "authors2"
+				}
+			]
+		}
+	}
+}
