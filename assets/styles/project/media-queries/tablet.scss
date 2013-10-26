@@ -1,0 +1,100 @@
+/*
+ * Tablet-Styles
+**/
+@media only screen and (max-width: 1024px) {
+	body {
+		background: #191919;
+	}
+	.menu {
+		display: block;
+		position: relative;
+		top: -9px;
+		left: 90%;
+		width: 10px;
+
+		&.up {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+		}
+
+		&.down {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		}
+
+		
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.navi {
+		display: none;
+	}
+	.wrapper {
+		display: block;
+	}
+
+	.column {
+		display: block;
+		float: none;
+	}
+
+	.left {
+		width: 100%;
+		background-image: none; 
+
+		.navi li {
+			float: left;
+			margin-right: 15px;
+		}
+	}
+	.right {
+		width: 100%;
+		padding-left: 20px;
+	}
+
+	.footer {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+	.preview {
+		float: none;
+		width: 100%;
+
+		.container {
+			max-width: 100%;
+
+			a {
+				float: left;
+				margin: 0 20px 20px 0;
+			}
+
+			div {
+				float: left;
+			}
+		}
+
+
+	}
+	.grid {
+		float: none;
+		width: 100%;
+	}
+
+	@media only screen and (max-width: 500px) {
+		.navi {
+			li {
+				width: 100%;
+			}
+		}
+	}
+}

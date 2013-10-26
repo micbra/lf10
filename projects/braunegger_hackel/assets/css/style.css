@@ -1,0 +1,14 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+*{box-sizing:border-box;}
+body{margin:0;padding:0;background:url('../img/mooning.jpg') repeat;font:normal normal 400 15px/150% 'Open Sans',Arial,sans-serif;}
+.wrapper{width:700px;margin:0 auto;}
+.placeholder{width:400px;position:fixed;top:-250px;}.placeholder img{position:relative;left:42%;width:100%;}
+.phone{width:700px;height:2000px;background:url('../img/smartphone.png') no-repeat;border-radius:10px;margin:700px auto 0;}
+.screen{display:none;width:448px;height:1340px;margin:40px auto 0;background:#fff;position:relative;top:166px;left:-2px;z-index:1;}
+.screen-overlay{background:#111;width:448px;height:1345px;margin:40px auto 0;position:relative;top:166px;left:-2px;z-index:2;}
+header,section{margin:0;box-shadow:0px 0px 5px 1px #000;}
+header{height:140px;padding:20px 10px 25px;background:#999;}header h1{margin:0;padding:0;font-size:39px;line-height:120%;font-weight:400;text-align:center;color:#e3e3e3;text-shadow:0px 2px 2px #000;}
+section{min-height:400px;padding:15px 20px;}section h2{margin:0;padding:0;color:#000;font-size:16px;}section h2:before{content:'»';margin-right:5px;}
+section.blue{background:#80d2fd;}
+section.green{background:#7dbc6e;}
+section.red{background:#e40f08;}
