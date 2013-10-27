@@ -1,6 +1,95 @@
 var screen = $('.screen'),
 win = $(window);
 
+window.onload = function () {
+	/*$('.barChartContainer').load('assets/svg/bar-chart.svg', function(response){
+		$(this).addClass('svgLoaded');
+		if(!response) {
+			console.log('error: no response');
+		}
+	});*/
+
+	jQuery.extend({
+		getValues: function(url) {
+			var result = null;
+			$.ajax({
+				url: url,
+				type: 'get',
+				dataType: 'json',
+				async: false,
+				success: function(data) {
+					result = data;
+				}
+			});
+			return result;
+		}
+	});
+	var results = $.getValues('data.json');
+
+		if (SVG.supported) {
+			var draw = SVG('barChartContainer').size('100%', '100%'),
+				bar2007 = draw.polygon('88,408 88,468 111,468 111,438 111,438 111,408').fill('#78CF07').stroke({ width: 0 }).attr('class', 'bar').attr('id', 'bar-2007'),
+				bar2008 = draw.polygon('139,398 139,468 161,468 161,398').fill('#78CF07').stroke({ width: 0 }).attr('class', 'bar').attr('id', 'bar-2008'),
+				bar2009 = draw.polygon('194,377 194,468 217,468 217,377').fill('#78CF07').stroke({ width: 0 }).attr('class', 'bar').attr('id', 'bar-2009'),
+				bar2010 = draw.polygon('250,307 250,468 273,468 273,307').fill('#78CF07').stroke({ width: 0 }).attr('class', 'bar').attr('id', 'bar-2010'),
+				bar2011 = draw.polygon('305,198 305,468 328,468 328,198').fill('#78CF07').stroke({ width: 0 }).attr('class', 'bar').attr('id', 'bar-2011'),
+				bar2012 = draw.polygon('361,88 361,468 384,468 384,88').fill('#78CF07').stroke({ width: 0 }).attr('class', 'bar').attr('id', 'bar-2012'),
+				bars = draw.set();
+
+				bars.add(bar2007, bar2008, bar2009, bar2010, bar2011, bar2012);
+
+				line = draw.line(67, 15, 399, 15).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 72, 399, 72).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 129, 399, 129).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 185, 399, 185).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 242, 399, 242).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 299, 399, 299).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 356, 399, 356).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 412, 399, 412).stroke({ width: 1, color: '#fff', opacity: 0.25 }),
+				line = draw.line(67, 469, 399, 469).stroke({ width: 1, color: '#fff', opacity: 0.25 });
+
+				bars.each(function(){
+					this.filter(function(add) {
+						var blur = add.offset(2,-2).in(add.sourceAlpha).gaussianBlur('2')
+						add.blend(add.source, blur)
+					}).size('150%','150%');
+				});
+
+				var barChartData = results.data.barChart;
+
+				var elements = $('#barChartContainer .bar').each(function() {
+					this.instance.on('mouseover', function(){
+						$(this).css('fill', '#7ed907');
+						var objectId = this.id,
+							id = objectId.replace('bar-', '');
+							$('.tooltip span').text(barChartData[id].val).stop().animate({"opacity": 0.85});
+							$('.tooltip').css({
+								'left': barChartData[id].x + 'px',
+								'top': barChartData[id].y + 'px'
+							});
+						
+					});
+					this.instance.on('mouseout', function(){
+						$(this).css('fill', '#78cf07');
+						var objectId = this.id,
+							id = objectId.replace('bar-', '');
+						$('.tooltip span').stop().animate({"opacity": 0});
+					});
+				});
+
+
+				
+
+
+
+		} else {
+			alert('SVG not supported');
+		}
+
+
+
+}
+
 win.scroll(function() {
 
 	var scrollPos = win.scrollTop();
@@ -21,60 +110,23 @@ win.scroll(function() {
 		}, 1000, function() {
 			showScreen();
 		});
+	}
 
-
-
+	if(scrollPos > 600) {
+		$('.cyan').addClass('waypoint');
+	}
+	if(scrollPos > 1150) {
+		$('.orange').addClass('waypoint');
+	}
+	if(scrollPos > 1800) {
+		$('.turquoise').addClass('waypoint');
 	}
 });
 
 function showScreen() {
 	$('.screen-overlay').remove();
 	$('.screen').show();
-	renderCharts();
 }
 
 
 
-function renderCharts() {
-	var piechart = document.querySelector(".piechart"),
-		barchart = document.querySelector(".barchart"),
-		r1 = Raphael(piechart),
-		r2 = Raphael(barchart),
-
-		//draw piechart
-		pie = r1.piechart(150, 150, 100, [79, 14.2, 3.3, 2.7, 0.8], { legend: ["%%.% - Android", "%%.% - iOS", "%%.% - Windows Phone", "%%.% - BlackBerry OS", "%%.% - Sonstige"], legendpos: "east"});
-
-	//hover function pie chart
-	pie.hover(function () {
-		this.sector.stop();
-		this.sector.scale(1.1, 1.1, this.cx, this.cy);
-
-		if (this.label) {
-			this.label[0].stop();
-			this.label[0].attr({ r: 7.5 });
-			this.label[1].attr({ "font-weight": 800 });
-		}
-	}, function () {
-		this.sector.animate({ transform: 's1 1 ' + this.cx + ' ' + this.cy }, 500, "bounce");
-
-		if (this.label) {
-			this.label[0].animate({ r: 5 }, 500, "bounce");
-			this.label[1].attr({ "font-weight": 400 });
-		}
-	});
-
-
-	//popup function bar chart
-	var fin = function () {
-			this.flag = r2.popup(this.bar.x, this.bar.y, this.bar.value || "0").insertBefore(this);
-		},
-		fout = function () {
-			this.flag.animate({opacity: 0}, 300, function () {
-				this.remove();
-			});
-		},
-		txtattr = { font: "12px sans-serif" };
-	
-	//draw barchart  
-	r2.barchart(50, 10, 300, 220, [[107.45, 124, 161.95, 285.23, 476.74, 671.39]]).hover(fin, fout);
-}

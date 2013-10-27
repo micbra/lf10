@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="barChart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="400px" height="500px" viewBox="0 0 400 500" enable-background="new 0 0 400 500" xml:space="preserve">
+	<script xmlns="http://www.w3.org/2000/svg" type="text/ecmascript">
+		function init(evt)
+		{
+		    if ( window.svgDocument == null )
+		    {
+			svgDocument = evt.target.ownerDocument;
+		    }
+
+		    tooltip = svgDocument.getElementById('tooltip');
+		    tooltip_bg = svgDocument.getElementById('tooltip_bg');
+
+		}
+
+		function ShowTooltip(evt, mouseovertext)
+		{
+		    tooltip.setAttributeNS(null,"x",evt.clientX-15);
+		    tooltip.setAttributeNS(null,"y",evt.clientY+27);
+		    tooltip.firstChild.data = mouseovertext;
+		    tooltip.setAttributeNS(null,"visibility","visible");
+
+		    length = tooltip.getComputedTextLength();
+		    tooltip_bg.setAttributeNS(null,"width",length+8);
+		    tooltip_bg.setAttributeNS(null,"x",evt.clientX-20);
+		    tooltip_bg.setAttributeNS(null,"y",evt.clientY+14);
+		    tooltip_bg.setAttributeNS(null,"visibility","visibile");
+		}
+
+		function HideTooltip(evt)
+		{
+		    tooltip.setAttributeNS(null,"visibility","hidden");
+		    tooltip_bg.setAttributeNS(null,"visibility","hidden");
+		}
+  </script>
+	<filter id="dropshadow" height="130%">
+		<feGaussianBlur in="SourceAlpha" stdDeviation="1"/> <!-- stdDeviation is how much to blur -->
+		<feOffset dx="1" dy="-1" result="offsetblur"/> <!-- how much to offset -->
+		<feMerge> <!-- this contains the offset blurred image -->
+			<feMergeNode/> 
+			<feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+		</feMerge>
+	</filter>
+<g id="lines">
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="15.916" x2="399.831" y2="15.916"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="72.608" x2="399.831" y2="72.608"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="129.301" x2="399.831" y2="129.301"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="185.994" x2="399.831" y2="185.994"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="242.687" x2="399.831" y2="242.687"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="299.38" x2="399.831" y2="299.38"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="356.073" x2="399.831" y2="356.073"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="412.766" x2="399.831" y2="412.766"/>
+	<line opacity="0.25" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="67.966" y1="469.459" x2="399.831" y2="469.459"/>
+</g>
+<g id="bar-2007">
+	<polygon fill="#78CF07" points="88.854,408.262 88.854,438.515 88.854,438.593 88.854,468.846 111.53,468.846 111.53,438.593 
+		111.53,438.515 111.53,408.262" style="filter:url(#dropshadow)" onmousemove="ShowTooltip(evt, '107.45')" onmouseout="HideTooltip(evt)"/>
+</g>
+<g id="bar-2008">
+	<polygon fill="#78CF07" points="139.269,398.631 139.269,433.696 139.269,433.78 139.269,468.846 161.946,468.846 161.946,433.78 
+		161.946,433.696 161.946,398.631" style="filter:url(#dropshadow)" onmousemove="ShowTooltip(evt, '124')" onmouseout="HideTooltip(evt)"/>
+</g>
+<g id="bar-2009">
+	<polygon fill="#78CF07" points="194.804,377.132 194.804,422.938 194.804,423.039 194.804,468.846 217.48,468.846 217.48,423.039 
+		217.48,422.938 217.48,377.132" style="filter:url(#dropshadow)" onmousemove="ShowTooltip(evt, '161,95')" onmouseout="HideTooltip(evt)"/>
+</g>
+<g id="bar-2010">
+	<polygon fill="#78CF07" points="250.338,307.219 250.338,387.993 250.338,388.071 250.338,468.846 273.015,468.846 
+		273.015,388.071 273.015,387.993 273.015,307.219" style="filter:url(#dropshadow)" onmousemove="ShowTooltip(evt, '285,23')" onmouseout="HideTooltip(evt)"/>
+</g>
+<g id="bar-2011">
+	<polygon fill="#78CF07" points="305.872,198.652 305.872,333.707 305.872,333.791 305.872,468.846 328.549,468.846 
+		328.549,333.791 328.549,333.707 328.549,198.652" style="filter:url(#dropshadow)" onmousemove="ShowTooltip(evt, '476,74')" onmouseout="HideTooltip(evt)"/>
+</g>
+<g id="bar-2012">
+	<polygon fill="#78CF07" points="361.406,88.293 361.406,278.53 361.406,278.608 361.406,468.846 384.083,468.846 384.083,278.608 
+		384.083,278.53 384.083,88.293" style="filter:url(#dropshadow)" onmousemove="ShowTooltip(evt, '671,39')" onmouseout="HideTooltip(evt)"/>
+</g>
+<g id="y-text">
+	<rect x="-31.515" y="464.023" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 50.436 474.6631)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">0</text>
+	<rect x="-31.515" y="407.33" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 6.4194 417.9697)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">10</text>
+	<rect x="-31.515" y="350.638" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 6.4194 361.2773)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">20</text>
+	<rect x="-31.515" y="293.944" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 6.4194 304.584)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">300</text>
+	<rect x="-31.515" y="237.252" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 6.4194 247.8916)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">400</text>
+	<rect x="-31.515" y="180.559" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 6.4194 191.1982)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">500</text>
+	<rect x="-31.515" y="123.866" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 6.4194 134.5059)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">600</text>
+	<rect x="-31.515" y="67.173" fill="none" width="89.942" height="10.871"/>
+	<text transform="matrix(1 0 0 1 6.4194 77.8125)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">700</text>
+	<rect x="-31.813" y="10.083" fill="none" width="90.241" height="11.666"/>
+	<text transform="matrix(1 0 0 1 6.4194 20.7217)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">800</text>
+</g>
+<g id="x-text">
+	<rect x="49.326" y="481.111" fill="none" width="66" height="33"/>
+	<text transform="matrix(1 0 0 1 83.3608 491.751)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">2007</text>
+	<rect x="103.928" y="481.111" fill="none" width="66" height="33"/>
+	<text transform="matrix(1 0 0 1 137.9634 491.751)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">2008</text>
+	<rect x="158.531" y="481.111" fill="none" width="66" height="33"/>
+	<text transform="matrix(1 0 0 1 192.5659 491.751)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">2009</text>
+	<rect x="213.134" y="481.111" fill="none" width="66" height="33"/>
+	<text transform="matrix(1 0 0 1 247.1689 491.751)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">2010</text>
+	<rect x="267.736" y="481.111" fill="none" width="66" height="33"/>
+	<text transform="matrix(1 0 0 1 301.7715 491.751)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">2011</text>
+	<rect x="322.339" y="481.111" fill="none" width="66" height="33"/>
+	<text transform="matrix(1 0 0 1 356.374 491.751)" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="14">2012</text>
+</g>
+<rect class="tooltip_bg" id="tooltip_bg" x="185" y="78" rx="4" ry="4" width="112" height="17" visibility="hidden"/>
+<text class="tooltip" id="tooltip" x="188" y="91" visibility="hidden" fill="#FFFFFF" font-family="'OpenSans-Bold'" font-size="12">test</text>
+</svg>

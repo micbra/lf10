@@ -14,28 +14,52 @@
 				<div class="screen-overlay"></div>
 				<div class="screen">
 					<header>
-						<h1>Smartphone Verbreitung &amp; Nutzung</h1>
+						<h1>Smartphone Verbreitung</h1>
 					</header>
-					<section class="blue">
-						<h2>Smartphone Verbreitung nach Jahren</h2>
-						<div class="barchart"></div>
+					<section class="cyan">
+						<h2>Smartphoneverkäufe / Jahr</h2>
+						<div class="tooltip">
+							<span>Test</span>
+						</div>
+						<div id="barChartContainer"></div>
+						<div class="barChartText">
+							<ul class="vertical">
+								<li>800</li>
+								<li>700</li>
+								<li>600</li>
+								<li>500</li>
+								<li>400</li>
+								<li>300</li>
+								<li>200</li>
+								<li>100</li>
+								<li>0</li>
+							</ul>
+							<ul class="group horizontal">
+								<li>2007</li>
+								<li>2008</li>
+								<li>2009</li>
+								<li>2010</li>
+								<li>2011</li>
+								<li>2012</li>
+							</ul>
+						<p class="subtext">in Millionen verkaufter Einheiten</p>
+						</div>
 					</section>
-					<section class="green">
-						<h2>Smartphone Verbreitung nach Betriebssystem</h2>
-						<div class="piechart"></div>
+					<section class="orange">
+						<h2>Aktueller Marktanteil</h2>
+						<div id="pieChartContainer"></div>
 					</section>
-					<section class="red">
-					<h2>Smartphone Verbreitung nach Kontinenten</h2>
+					<section class="turquoise">
+					<h2>Apps</h2>
+					<div id="lineChartContainer"></div>
 				</section>
 				</div>
 			</div>
 		</div>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="assets/js/lib/raphael-min.js"></script>
-		<script src="assets/js/lib/g.raphael-min.js"></script>
-		<script src="assets/js/lib/g.pie-min.js"></script>
-		<script src="assets/js/lib/g.bar-min.js"></script>
+		<script src="assets/js/lib/jquery-1.10.2.min.js"></script>
+		<script src="assets/js/lib/svg.min.js"></script>
+		<script src="assets/js/lib/svg.filter.js"></script>
 		<script src="assets/js/scripts.js"></script>
 	</body>
 </html>

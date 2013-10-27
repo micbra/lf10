@@ -2,51 +2,64 @@
 <head>
 	<title></title>
 <style>
-	.barChart {
-		width: 280px;
-		height: 280px;
+	body {
+		background: #00cdcd;
+	}
+	.barChartContainer {
+		width: 400px;
+		height: 500px;
 	}
 	#bar-2007 {
-		-webkit-transform-origin: 75px 169px;
+		-webkit-transform-origin: 100px 450px;
 	}
 	#bar-2008 {
-		-webkit-transform-origin: 95px 166px;
+		-webkit-transform-origin: 150px 450px;
 	}
 	#bar-2009 {
-		-webkit-transform-origin: 115px 164px;
+		-webkit-transform-origin: 206px 450px;
 	}
 	#bar-2010 {
-		-webkit-transform-origin: 135px 160px;
+		-webkit-transform-origin: 262px 450px;
 	}
 	#bar-2011 {
-		-webkit-transform-origin: 155px 149px;
+		-webkit-transform-origin: 322px 450px;
 	}
 	#bar-2012 {
-		-webkit-transform-origin: 15px 142px;
+		-webkit-transform-origin: 373px 450px;
 	}
-	[id|=bar] { 
-		-webkit-transform: scale(1);
-		-webkit-transition: all 0.25s ease-in-out;
+	@-webkit-keyframes grow-y {
+		0% {
+			-webkit-transform: scaleY(0);
+		}
+		100% {
+			-webkit-transform: scaleY(1);
+		}
 	}
-	.barChart [id|=bar]:hover {
-		-webkit-transform: translateY(-5px);
+
+	.svgLoaded [id|=bar] { 
+		-webkit-animation: grow-y 1s;
+		/*-webkit-animation-fill-mode: backwards;*/
+	}
+
+	
+
 	}
 </style>
 </head>
 <body>
-	<div class="barChart"></div>
+	<div class="barChartContainer"></div>
 	<script src="assets/js/lib/jquery-1.10.2.min.js"></script>
 
 	<script>
 			window.onload = function () {
 
-				$('.barChart').load('test.svg', function(response){
+				$('.barChartContainer').load('assets/svg/bar-chart.svg', function(response){
 					$(this).addClass('svgLoaded');
 
 					if(!response) {
 						console.log('error: no response');
 					}
-				}); 
+				});
 			};
 
 	</script>

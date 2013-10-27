@@ -1,14 +1,31 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
 *{box-sizing:border-box;}
-body{margin:0;padding:0;background:url('../img/mooning.jpg') repeat;font:normal normal 400 15px/150% 'Open Sans',Arial,sans-serif;}
+body{margin:0;padding:0;background:url('../img/bg.jpg') no-repeat,url('../img/mooning.jpg') repeat;font:normal normal 400 15px/150% 'Open Sans',Arial,sans-serif;}
+.group:after{visibility:hidden;display:block;content:"";clear:both;height:0;}
 .wrapper{width:700px;margin:0 auto;}
 .placeholder{width:400px;position:fixed;top:-250px;}.placeholder img{position:relative;left:42%;width:100%;}
-.phone{width:700px;height:2000px;background:url('../img/smartphone.png') no-repeat;border-radius:10px;margin:700px auto 0;}
+.phone{width:700px;height:2600px;background:url('../img/smartphone.png') no-repeat;border-radius:10px;margin:700px auto 0;}
 .screen{display:none;width:448px;height:1340px;margin:40px auto 0;background:#fff;position:relative;top:166px;left:-2px;z-index:1;}
 .screen-overlay{background:#111;width:448px;height:1345px;margin:40px auto 0;position:relative;top:166px;left:-2px;z-index:2;}
 header,section{margin:0;box-shadow:0px 0px 5px 1px #000;}
-header{height:140px;padding:20px 10px 25px;background:#999;}header h1{margin:0;padding:0;font-size:39px;line-height:120%;font-weight:400;text-align:center;color:#e3e3e3;text-shadow:0px 2px 2px #000;}
-section{min-height:400px;padding:15px 20px;}section h2{margin:0;padding:0;color:#000;font-size:16px;}section h2:before{content:'»';margin-right:5px;}
-section.blue{background:#80d2fd;}
-section.green{background:#7dbc6e;}
-section.red{background:#e40f08;}
+header{height:140px;padding:12.5% 10px 25px;background:url(../img/pattern_yellow.png) repeat;}header h1{margin:0;padding:0;font-size:30px;line-height:120%;font-weight:700;text-align:center;color:#fff;text-transform:uppercase;text-shadow:0px 2px 2px #000;}
+section{min-height:600px;padding:15px 0;}section h2{font-size:25px;line-height:120%;font-weight:700;text-align:center;color:#fff;text-transform:uppercase;text-shadow:0px 1px 3px #000;}section h2:before{content:'»';margin-right:5px;}
+section h2:after{content:'«';margin-left:5px;}
+section .subtext{color:#fff;font-size:10px;margin-left:50px;}
+section.cyan{background:url('../img/pattern_cyan.png') repeat;}
+section.orange{background:url('../img/pattern_orange.png') repeat;}
+section.turquoise{background:url('../img/pattern_turquoise.png') repeat;}
+section .csstooltips{position:relative;display:inline;}section .csstooltips span{position:absolute;width:140px;color:#FFFFFF;background:#000000;height:30px;line-height:30px;text-align:center;visibility:hidden;border-radius:6px;}
+section .csstooltips span:after{content:'';position:absolute;top:100%;left:50%;margin-left:-8px;width:0;height:0;border-top:8px solid #000000;border-right:8px solid transparent;border-left:8px solid transparent;}
+section .csstooltips:hover span{visibility:visible;opacity:0.85;bottom:30px;left:50%;margin-left:-76px;z-index:999;}
+section .tooltip{position:relative;display:inline;top:420px;left:170px;}section .tooltip span{position:absolute;width:60px;color:#FFF;background:#000;height:30px;line-height:30px;text-align:center;opacity:0;bottom:30px;left:50%;margin-left:-76px;z-index:999;border-radius:5px;}
+section .tooltip span:after{content:'';position:absolute;top:100%;left:50%;margin-left:-8px;width:0;height:0;border-top:8px solid #000000;border-right:8px solid transparent;border-left:8px solid transparent;}
+section #barChartContainer{width:400px;height:500px;margin:0 auto;}section #barChartContainer #bar-2007{display:none;-webkit-transform-origin:100px 468px;}
+section #barChartContainer #bar-2008{display:none;-webkit-transform-origin:150px 468px;}
+section #barChartContainer #bar-2009{display:none;-webkit-transform-origin:206px 468px;}
+section #barChartContainer #bar-2010{display:none;-webkit-transform-origin:262px 468px;}
+section #barChartContainer #bar-2011{display:none;-webkit-transform-origin:322px 468px;}
+section #barChartContainer #bar-2012{display:none;-webkit-transform-origin:373px 468px;}
+section .barChartText{margin-top:-530px;}section .barChartText .vertical{width:80px;}section .barChartText .vertical li{font-weight:700;font:15px;color:#fff;list-style:none;line-height:3.7;text-align:right;}
+section .barChartText .horizontal{margin:-30px 0 0 40px;}section .barChartText .horizontal li{font-weight:700;font:15px;color:#fff;list-style:none;float:left;margin-left:20px;}
+@-webkit-keyframes grow-y{0%{-webkit-transform:scaleY(0);} 100%{-webkit-transform:scaleY(1);}}.cyan.waypoint .bar{-webkit-animation:grow-y 1s;display:block !important;}
