@@ -2,21 +2,15 @@ var screen = $('.screen'),
 win = $(window);
 
 window.onload = function () {
-	/*$('.barChartContainer').load('assets/svg/bar-chart.svg', function(response){
-		$(this).addClass('svgLoaded');
-		if(!response) {
-			console.log('error: no response');
-		}
-	});*/
 
 	jQuery.extend({
-		getValues: function(url) {
+		getValues: function(url, async) {
 			var result = null;
 			$.ajax({
 				url: url,
 				type: 'get',
 				dataType: 'json',
-				async: false,
+				async: async,
 				success: function(data) {
 					result = data;
 				}
@@ -24,7 +18,66 @@ window.onload = function () {
 			return result;
 		}
 	});
-	var results = $.getValues('data.json');
+	var results = $.getValues('data.json', false),
+		getComments = $.getValues('comments.json', false);
+
+	var commentData = getComments;
+
+	
+	//read comments
+	function readComments(source) {
+		$.each(source.comments, function(index, value) {
+			var newComment = '<div class="comment"><p class="author"><strong>'+value.author+'</strong></p><p class="text">'+value.message+'</p></div>';
+			$('.latestComments').append(newComment);
+		});
+	}
+
+
+	readComments(commentData);
+	
+
+	//write comments
+	$('.commentform').submit(function(e) {
+		e.preventDefault();
+
+		var getAuthor = $('.commentform .author').val();
+		var getText = $('.commentform textarea').val();
+
+		if(getAuthor.length != 0 && getText.length != 0) {
+			commentData.comments.push({author: getAuthor, message: getText}); //push new data to comment-object
+			$('.latestComments').empty();//delete all comments
+			readComments(commentData);// ...and load them again
+
+
+			//Since the HTML5 File-API isn't very stable yet, there is no easy way to write files on the user agent side.
+			//Hence the comments on this page are only available until reload :(
+			//write comments to comments.json
+			/*function onInitFs(fs) {
+				fs.root.getFile('comments.json', {create: true}, function(fileEntry) {
+
+				// Create a FileWriter object for our FileEntry.
+				fileEntry.createWriter(function(fileWriter) {
+					fileWriter.onwriteend = function(e) {
+					console.log('Write completed.');
+					};
+					fileWriter.onerror = function(e) {
+					console.log('Write failed: ' + e.toString());
+					};
+
+					// Create a new Blob and write it to comments.json.
+					var blob = new Blob([commentData]);
+				});
+
+				});
+			}
+
+			window.webkitRequestFileSystem(window.TEMPORARY, 1024*1024, onInitFs);*/
+		}
+
+	})
+
+
+
 
 		if (SVG.supported) {
 			// BarChart
@@ -109,8 +162,8 @@ window.onload = function () {
 
 			var line_android = drawLineChart.polyline('362.238,84.29 274.901,234.296 187.563,335.549 100.226,378.3').fill('none').stroke({ width: 3, color: '#009BB1' }).attr('class', 'line').attr('id', 'android'),
 				line_ios = drawLineChart.polyline('362.238,46.791 274.901,168.669 187.563,253.046 100.226,339.299').fill('none').stroke({ width: 3, color: '#EA5437' }).attr('class', 'line').attr('id', 'ios'),
-				line_rim = drawLineChart.polyline('362.238,346.799 274.901,353.174 187.563,382.05').fill('none').stroke({ width: 3, color: '#C96691' }).attr('class', 'line').attr('id', 'rim'),
-				line_win = drawLineChart.polyline('362.238,339.299 274.901,358.049 187.563,377.55').fill('none').stroke({ width: 3, color: '#FFDD00' }).attr('class', 'line').attr('id', 'win'),
+				line_rim = drawLineChart.polyline('362.238,346.799 274.901,353.174 187.563,382.05').fill('none').stroke({ width: 3, color: '#FFDD00' }).attr('class', 'line').attr('id', 'rim'),
+				line_win = drawLineChart.polyline('362.238,339.299 274.901,358.049 187.563,377.55').fill('none').stroke({ width: 3, color: '#C96691' }).attr('class', 'line').attr('id', 'win'),
 
 				i1 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#E3000B'}).attr('cx', '100').attr('cy', '339').attr('class', 'point').attr('id', 'i1'),
 				i2 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#E3000B'}).attr('cx', '188').attr('cy', '253').attr('class', 'point').attr('id', 'i2'),
@@ -122,13 +175,13 @@ window.onload = function () {
 				a3 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#009BB1'}).attr('cx', '275').attr('cy', '234').attr('class', 'point').attr('id', 'a3'),
 				a4 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#009BB1'}).attr('cx', '362').attr('cy', '84').attr('class', 'point').attr('id', 'a4'),
 
-				w1 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#FFDD00'}).attr('cx', '188').attr('cy', '378').attr('class', 'point').attr('id', 'w1'),
-				w2 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#FFDD00'}).attr('cx', '275').attr('cy', '358').attr('class', 'point').attr('id', 'w2'),
-				w3 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#FFDD00'}).attr('cx', '362').attr('cy', '339').attr('class', 'point').attr('id', 'w3'),
+				w1 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#FFDD00'}).attr('cx', '188').attr('cy', '382').attr('class', 'point').attr('id', 'w1'),
+				w2 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#FFDD00'}).attr('cx', '275').attr('cy', '353').attr('class', 'point').attr('id', 'w2'),
+				w3 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#FFDD00'}).attr('cx', '362').attr('cy', '347').attr('class', 'point').attr('id', 'w3'),
 
 				b1 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#C96691'}).attr('cx', '188').attr('cy', '378').attr('class', 'point').attr('id', 'b1'),
-				b2 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#C96691'}).attr('cx', '275').attr('cy', '353').attr('class', 'point').attr('id', 'b2'),
-				b3 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#C96691'}).attr('cx', '362').attr('cy', '347').attr('class', 'point').attr('id', 'b3');
+				b2 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#C96691'}).attr('cx', '275').attr('cy', '358').attr('class', 'point').attr('id', 'b2'),
+				b3 = drawLineChart.circle('8').fill('#fff').stroke({width: 2, color: '#C96691'}).attr('cx', '362').attr('cy', '339').attr('class', 'point').attr('id', 'b3');
 
 
 			drawLineChart.line(83, 9, 379, 9).stroke({ width: 1, color: '#fff', opacity: 0.25 });
