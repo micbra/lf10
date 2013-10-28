@@ -164,21 +164,48 @@ header {
 
 		#bar-2007 {
 			-webkit-transform-origin: 100px 468px;
+			-moz-transform-origin: 100px 468px;
+			-ms-transform-origin: 100px 468px;
+			-o-transform-origin: 100px 468px;
+			transform-origin: 100px 468px;
 		}
 		#bar-2008 {
 			-webkit-transform-origin: 150px 468px;
+			-moz-transform-origin: 150px 468px;
+			-ms-transform-origin: 150px 468px;
+			-o-transform-origin: 150px 468px;
+			transform-origin: 150px 468px;
 		}
 		#bar-2009 {
 			-webkit-transform-origin: 206px 468px;
+			-moz-transform-origin: 206px 468px;
+			-ms-transform-origin: 206px 468px;
+			-o-transform-origin: 206px 468px;
+			transform-origin: 206px 468px;
+
 		}
 		#bar-2010 {
 			-webkit-transform-origin: 262px 468px;
+			-moz-transform-origin: 262px 468px;
+			-ms-transform-origin: 262px 468px;
+			-o-transform-origin: 262px 468px;
+			transform-origin: 262px 468px;
+
 		}
 		#bar-2011 {
 			-webkit-transform-origin: 322px 468px;
+			-moz-transform-origin: 322px 468px;
+			-ms-transform-origin: 322px 468px;
+			-o-transform-origin: 322px 468px;
+			transform-origin: 322px 468px;
+
 		}
 		#bar-2012 {
 			-webkit-transform-origin: 373px 468px;
+			-moz-transform-origin: 373px 468px;
+			-ms-transform-origin: 373px 468px;
+			-o-transform-origin: 373px 468px;
+			transform-origin: 373px 468px;
 		}
 
 		.bar {
@@ -221,6 +248,10 @@ header {
 
 		.pie {
 			-webkit-transform-origin: 152px 152px;
+			-moz-transform-origin: 152px 152px;
+			-ms-transform-origin: 152px 152px;
+			-o-transform-origin: 152px 152px;
+			transform-origin: 152px 152px;
 		}
 	}
 	.pieChartText, .lineChartText,  {
@@ -298,6 +329,10 @@ header {
 
 		.pie {
 			-webkit-transform-origin: 152px 152px;
+			-moz-transform-origin: 152px 152px;
+			-ms-transform-origin: 152px 152px;
+			-o-transform-origin: 152px 152px;
+			transform-origin: 152px 152px;
 		}
 	}
 
@@ -316,13 +351,53 @@ header {
 			-webkit-transform: scaleY(1);
 		}
 	}
+	@-moz-keyframes grow-y {
+		0% {
+			-webkit-transform: scaleY(0);
+		}
+		100% {
+			-webkit-transform: scaleY(1);
+		}
+	}
+	@-ms-keyframes grow-y {
+		0% {
+			-webkit-transform: scaleY(0);
+		}
+		100% {
+			-webkit-transform: scaleY(1);
+		}
+	}
+	@-o-keyframes grow-y {
+		0% {
+			-webkit-transform: scaleY(0);
+		}
+		100% {
+			-webkit-transform: scaleY(1);
+		}
+	}
+	@keyframes grow-y {
+		0% {
+			-webkit-transform: scaleY(0);
+		}
+		100% {
+			-webkit-transform: scaleY(1);
+		}
+	}
 	.cyan.waypoint .bar { 
 		-webkit-animation: grow-y 1s;
+		-moz-animation: grow-y 1s;
+		-ms-animation: grow-y 1s;
+		-o-animation: grow-y 1s;
+		animation: grow-y 1s;
 		display: block !important;
 	}
 	.orange.waypoint #pieChartContainer, .turquoise.waypoint #lineChartContainer {
 		opacity: 1;
 		-webkit-transition: all .75s ease-in;
+		-moz-transition: all .75s ease-in;
+		-ms-transition: all .75s ease-in;
+		-o-transition: all .75s ease-in;
+		transition: all .75s ease-in;
 	}
 
 /// outside phone
