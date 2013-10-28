@@ -136,18 +136,18 @@ section {
 				text-align: center;
 				visibility: hidden;
 				border-radius: 6px;
-			}
-		
-			span:after {
-				content: '';
-				position: absolute;
-				top: 100%;
-				left: 50%;
-				margin-left: -8px;
-				width: 0; height: 0;
-				border-top: 8px solid #000000;
-				border-right: 8px solid transparent;
-				border-left: 8px solid transparent;
+
+				&:after {
+					content: '';
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					margin-left: -8px;
+					width: 0; height: 0;
+					border-top: 8px solid #000000;
+					border-right: 8px solid transparent;
+					border-left: 8px solid transparent;
+				}
 			}
 
 		&:hover span {
@@ -200,27 +200,21 @@ section {
 		margin: 0 auto;
 
 		#bar-2007 {
-			display: none;
 			-webkit-transform-origin: 100px 468px;
 		}
 		#bar-2008 {
-			display: none;
 			-webkit-transform-origin: 150px 468px;
 		}
 		#bar-2009 {
-			display: none;
 			-webkit-transform-origin: 206px 468px;
 		}
 		#bar-2010 {
-			display: none;
 			-webkit-transform-origin: 262px 468px;
 		}
 		#bar-2011 {
-			display: none;
 			-webkit-transform-origin: 322px 468px;
 		}
 		#bar-2012 {
-			display: none;
 			-webkit-transform-origin: 373px 468px;
 		}
 	}
@@ -250,10 +244,59 @@ section {
 			}
 		}
 	}
-
-
-
 // pie chart
+
+	#pieChartContainer {
+		width: 305px;
+		height: 305px;
+		margin: 80px auto 0;
+
+		.pie {
+			-webkit-transform-origin: 152px 152px;
+		}
+	}
+	.pieChartText {
+		margin-top: 90px;
+		
+		.horizontal {
+			padding-left: 6%;
+
+			li {
+				font-weight: 400;
+				font-size: 12px;
+				color: #fff;
+				list-style: none;
+				float: left;
+				margin-left: 20px;
+				padding-left: 5px;
+
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 10px;
+					height: 10px;
+					background: #ccc;
+					box-shadow: 1px -1px 2px #000;
+					margin-right: 5px;
+				}
+				&.android:before {
+					background: #009BB1;
+				}
+				&.ios:before {
+					background: #EA5437;
+				}
+				&.rim:before {
+					background: #C96691;
+				}
+				&.win:before {
+					background: #FFDD00;
+				}
+			}
+		}
+	}
+
+
+
 }
 	@-webkit-keyframes grow-y {
 		0% {
@@ -267,3 +310,4 @@ section {
 		-webkit-animation: grow-y 1s;
 		display: block !important;
 	}
+
