@@ -7,7 +7,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: url('../img/bg.jpg') no-repeat, url('../img/mooning.jpg') repeat;
+	background: url('../img/bg.jpg') 60% 0px no-repeat, url('../img/mooning.jpg') repeat;
 	font: normal normal 400 15px/150% 'Open Sans', Arial, sans-serif;
 }
 .group:after {
@@ -122,43 +122,6 @@ section {
 	&.turquoise {
 		background: url('../img/pattern_turquoise.png') repeat;	}
 
-	.csstooltips {
-			position: relative;
-			display: inline;
-		
-			span {
-				position: absolute;
-				width:140px;
-				color: #FFFFFF;
-				background: #000000;
-				height: 30px;
-				line-height: 30px;
-				text-align: center;
-				visibility: hidden;
-				border-radius: 6px;
-
-				&:after {
-					content: '';
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					margin-left: -8px;
-					width: 0; height: 0;
-					border-top: 8px solid #000000;
-					border-right: 8px solid transparent;
-					border-left: 8px solid transparent;
-				}
-			}
-
-		&:hover span {
-			visibility: visible;
-			opacity: 0.85;
-			bottom: 30px;
-			left: 50%;
-			margin-left: -76px;
-			z-index: 999;
-		}
-	}
 	.tooltip {
 			position: relative;
 			display: inline;
@@ -167,6 +130,7 @@ section {
 		
 			span {
 				position: absolute;
+				pointer-events: none;
 				width:60px;
 				color: #FFF;
 				background: #000;
@@ -179,18 +143,18 @@ section {
 				margin-left: -76px;
 				z-index: 999;
 				border-radius: 5px;
-			}
-		
-			span:after {
-				content: '';
-				position: absolute;
-				top: 100%;
-				left: 50%;
-				margin-left: -8px;
-				width: 0; height: 0;
-				border-top: 8px solid #000000;
-				border-right: 8px solid transparent;
-				border-left: 8px solid transparent;
+
+				&:after {
+					content: '';
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					margin-left: -8px;
+					width: 0; height: 0;
+					border-top: 8px solid #000000;
+					border-right: 8px solid transparent;
+					border-left: 8px solid transparent;
+				}
 			}
 	}
 // bar chart
@@ -217,6 +181,10 @@ section {
 		#bar-2012 {
 			-webkit-transform-origin: 373px 468px;
 		}
+
+		.bar {
+			display: none;
+		}
 	}
 	.barChartText {
 		margin-top: -530px;
@@ -225,10 +193,10 @@ section {
 			width: 80px;
 			li {
 				font-weight: 700;
-				font: 15px;
+				font-size: 14px;
 				color: #fff;
 				list-style: none;
-				line-height: 3.7;
+				line-height: 4.1;
 				text-align: right;
 			}
 		}
@@ -236,11 +204,11 @@ section {
 			margin: -30px 0 0 40px;
 			li {
 				font-weight: 700;
-				font: 15px;
+				font-size: 14px;
 				color: #fff;
 				list-style: none;
 				float: left;
-				margin-left: 20px;
+				margin-left: 23px;
 			}
 		}
 	}
@@ -255,10 +223,35 @@ section {
 			-webkit-transform-origin: 152px 152px;
 		}
 	}
-	.pieChartText {
+	.pieChartText, .lineChartText,  {
 		margin-top: 90px;
-		
+
+		.vertical {
+			width: 80px;
+			li {
+				font-weight: 700;
+				font-size: 14px;
+				color: #fff;
+				list-style: none;
+				line-height: 2.79;
+				text-align: right;
+			}
+		}
+
 		.horizontal {
+			margin: -30px 0 0 40px;
+
+			li {
+				font-weight: 700;
+				font-size: 14px;
+				color: #fff;
+				list-style: none;
+				float: left;
+				margin-left: 36px;
+			}
+		}
+		
+		.legend {
 			padding-left: 6%;
 
 			li {
@@ -293,6 +286,22 @@ section {
 				}
 			}
 		}
+	}
+
+// line chart
+
+	#lineChartContainer {
+		width: 595px;
+		height: 623px;
+		margin: 85px auto 0;
+
+		.pie {
+			-webkit-transform-origin: 152px 152px;
+		}
+	}
+
+	.lineChartText {
+		margin-top: -650px;
 	}
 
 

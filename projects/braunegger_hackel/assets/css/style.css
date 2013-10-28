@@ -1,6 +1,6 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
 *{box-sizing:border-box;}
-body{margin:0;padding:0;background:url('../img/bg.jpg') no-repeat,url('../img/mooning.jpg') repeat;font:normal normal 400 15px/150% 'Open Sans',Arial,sans-serif;}
+body{margin:0;padding:0;background:url('../img/bg.jpg') 60% 0px no-repeat,url('../img/mooning.jpg') repeat;font:normal normal 400 15px/150% 'Open Sans',Arial,sans-serif;}
 .group:after{visibility:hidden;display:block;content:"";clear:both;height:0;}
 .wrapper{width:700px;margin:0 auto;}
 .placeholder{width:400px;position:fixed;top:-250px;}.placeholder img{position:relative;left:42%;width:100%;}
@@ -15,22 +15,24 @@ section .subtext{color:#fff;font-size:10px;margin-left:50px;}
 section.cyan{background:url('../img/pattern_cyan.png') repeat;}
 section.orange{background:url('../img/pattern_orange.png') repeat;}
 section.turquoise{background:url('../img/pattern_turquoise.png') repeat;}
-section .csstooltips{position:relative;display:inline;}section .csstooltips span{position:absolute;width:140px;color:#FFFFFF;background:#000000;height:30px;line-height:30px;text-align:center;visibility:hidden;border-radius:6px;}section .csstooltips span:after{content:'';position:absolute;top:100%;left:50%;margin-left:-8px;width:0;height:0;border-top:8px solid #000000;border-right:8px solid transparent;border-left:8px solid transparent;}
-section .csstooltips:hover span{visibility:visible;opacity:0.85;bottom:30px;left:50%;margin-left:-76px;z-index:999;}
-section .tooltip{position:relative;display:inline;top:420px;left:170px;}section .tooltip span{position:absolute;width:60px;color:#FFF;background:#000;height:30px;line-height:30px;text-align:center;opacity:0;bottom:30px;left:50%;margin-left:-76px;z-index:999;border-radius:5px;}
-section .tooltip span:after{content:'';position:absolute;top:100%;left:50%;margin-left:-8px;width:0;height:0;border-top:8px solid #000000;border-right:8px solid transparent;border-left:8px solid transparent;}
+section .tooltip{position:relative;display:inline;top:420px;left:170px;}section .tooltip span{position:absolute;pointer-events:none;width:60px;color:#FFF;background:#000;height:30px;line-height:30px;text-align:center;opacity:0;bottom:30px;left:50%;margin-left:-76px;z-index:999;border-radius:5px;}section .tooltip span:after{content:'';position:absolute;top:100%;left:50%;margin-left:-8px;width:0;height:0;border-top:8px solid #000000;border-right:8px solid transparent;border-left:8px solid transparent;}
 section #barChartContainer{width:400px;height:500px;margin:0 auto;}section #barChartContainer #bar-2007{-webkit-transform-origin:100px 468px;}
 section #barChartContainer #bar-2008{-webkit-transform-origin:150px 468px;}
 section #barChartContainer #bar-2009{-webkit-transform-origin:206px 468px;}
 section #barChartContainer #bar-2010{-webkit-transform-origin:262px 468px;}
 section #barChartContainer #bar-2011{-webkit-transform-origin:322px 468px;}
 section #barChartContainer #bar-2012{-webkit-transform-origin:373px 468px;}
-section .barChartText{margin-top:-530px;}section .barChartText .vertical{width:80px;}section .barChartText .vertical li{font-weight:700;font:15px;color:#fff;list-style:none;line-height:3.7;text-align:right;}
-section .barChartText .horizontal{margin:-30px 0 0 40px;}section .barChartText .horizontal li{font-weight:700;font:15px;color:#fff;list-style:none;float:left;margin-left:20px;}
+section #barChartContainer .bar{display:none;}
+section .barChartText{margin-top:-530px;}section .barChartText .vertical{width:80px;}section .barChartText .vertical li{font-weight:700;font-size:14px;color:#fff;list-style:none;line-height:4.1;text-align:right;}
+section .barChartText .horizontal{margin:-30px 0 0 40px;}section .barChartText .horizontal li{font-weight:700;font-size:14px;color:#fff;list-style:none;float:left;margin-left:23px;}
 section #pieChartContainer{width:305px;height:305px;margin:80px auto 0;}section #pieChartContainer .pie{-webkit-transform-origin:152px 152px;}
-section .pieChartText{margin-top:90px;}section .pieChartText .horizontal{padding-left:6%;}section .pieChartText .horizontal li{font-weight:400;font-size:12px;color:#fff;list-style:none;float:left;margin-left:20px;padding-left:5px;}section .pieChartText .horizontal li:before{content:'';display:inline-block;width:10px;height:10px;background:#ccc;box-shadow:1px -1px 2px #000000;margin-right:5px;}
-section .pieChartText .horizontal li.android:before{background:#009BB1;}
-section .pieChartText .horizontal li.ios:before{background:#EA5437;}
-section .pieChartText .horizontal li.rim:before{background:#C96691;}
-section .pieChartText .horizontal li.win:before{background:#FFDD00;}
+section .pieChartText,section .lineChartText{margin-top:90px;}section .pieChartText .vertical,section .lineChartText .vertical{width:80px;}section .pieChartText .vertical li,section .lineChartText .vertical li{font-weight:700;font-size:14px;color:#fff;list-style:none;line-height:2.79;text-align:right;}
+section .pieChartText .horizontal,section .lineChartText .horizontal{margin:-30px 0 0 40px;}section .pieChartText .horizontal li,section .lineChartText .horizontal li{font-weight:700;font-size:14px;color:#fff;list-style:none;float:left;margin-left:36px;}
+section .pieChartText .legend,section .lineChartText .legend{padding-left:6%;}section .pieChartText .legend li,section .lineChartText .legend li{font-weight:400;font-size:12px;color:#fff;list-style:none;float:left;margin-left:20px;padding-left:5px;}section .pieChartText .legend li:before,section .lineChartText .legend li:before{content:'';display:inline-block;width:10px;height:10px;background:#ccc;box-shadow:1px -1px 2px #000000;margin-right:5px;}
+section .pieChartText .legend li.android:before,section .lineChartText .legend li.android:before{background:#009BB1;}
+section .pieChartText .legend li.ios:before,section .lineChartText .legend li.ios:before{background:#EA5437;}
+section .pieChartText .legend li.rim:before,section .lineChartText .legend li.rim:before{background:#C96691;}
+section .pieChartText .legend li.win:before,section .lineChartText .legend li.win:before{background:#FFDD00;}
+section #lineChartContainer{width:595px;height:623px;margin:85px auto 0;}section #lineChartContainer .pie{-webkit-transform-origin:152px 152px;}
+section .lineChartText{margin-top:-650px;}
 @-webkit-keyframes grow-y{0%{-webkit-transform:scaleY(0);} 100%{-webkit-transform:scaleY(1);}}.cyan.waypoint .bar{-webkit-animation:grow-y 1s;display:block !important;}
