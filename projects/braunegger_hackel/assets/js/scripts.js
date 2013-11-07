@@ -46,6 +46,9 @@ window.onload = function () {
 		if(getAuthor.length != 0 && getText.length != 0) {
 			commentData.comments.push({author: getAuthor, message: getText}); //push new data to comment-object
 			$('.latestComments').empty();//delete all comments
+			$('.commentform .author').val('');
+			$('.commentform textarea').val(''); //delete form values
+
 			readComments(commentData);// ...and load them again
 
 
@@ -104,8 +107,8 @@ window.onload = function () {
 
 				bars.each(function(){
 					this.filter(function(add) {
-						var blur = add.offset(2,-2).in(add.sourceAlpha).gaussianBlur('2')
-						add.blend(add.source, blur)
+						var blur = add.offset(2,-2).in(add.sourceAlpha).gaussianBlur('2');
+						add.blend(add.source, blur);
 					}).size('150%','150%');
 				});
 

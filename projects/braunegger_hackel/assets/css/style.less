@@ -2,6 +2,8 @@
 
 * {
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 body {
@@ -37,7 +39,7 @@ body {
 	height: 2400px;
 	background: url('../img/smartphone.png') no-repeat;
 	border-radius: 10px;
-	margin: 700px auto 0;
+	margin: 700px auto 70px;
 }
 .screen {
 	display: none;
@@ -63,11 +65,13 @@ body {
 header, section {
 	margin: 0;
 	box-shadow: 0px 0px 5px 1px #000;
+	position: relative;
 }
 
 header {
 	height: 140px;
 	padding: 12.5% 10px 25px;
+	z-index: 4;
 	background: url(../img/pattern_yellow.png) repeat;
 
 	h1 {
@@ -114,12 +118,15 @@ header {
 
 	&.cyan {
 		background: url('../img/pattern_cyan.png') repeat;
+		z-index: 3;
 	}
 	&.orange {
 		background: url('../img/pattern_orange.png') repeat;
+		z-index: 2;
 	}
 	&.turquoise {
 		background: url('../img/pattern_turquoise.png') repeat;	}
+		z-index: 1;
 
 	.tooltip {
 			position: relative;
@@ -401,7 +408,17 @@ header {
 	}
 
 /// outside phone
+.creators {
+	text-align: center;
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 70px;
 
+	img {
+		margin-right: 20px;
+		vertical-align: middle;
+	}
+}
 .nophone {
 	padding: 70px 0;
 	box-shadow: none;
