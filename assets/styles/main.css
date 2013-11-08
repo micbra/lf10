@@ -689,6 +689,10 @@ h2 {
     width: 220px;
     height: 220px;
     display: block; }
+    .preview a img {
+      width: 220px;
+      height: 220px;
+    }
 
 .grid {
   width: 66.666%;
