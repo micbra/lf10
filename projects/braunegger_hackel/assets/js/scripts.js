@@ -52,8 +52,9 @@ window.onload = function () {
 			readComments(commentData);// ...and load them again
 
 
-			//Since the HTML5 File-API isn't very stable yet, there is no easy way to write files on the user agent side.
+			//Since in we don't use server-side technology in this project, there is no easy way to write files on the user agent side.
 			//Hence the comments on this page are only available until reload :(
+
 			//write comments to comments.json
 			/*function onInitFs(fs) {
 				fs.root.getFile('comments.json', {create: true}, function(fileEntry) {
@@ -78,10 +79,6 @@ window.onload = function () {
 		}
 
 	})
-
-
-
-
 		if (SVG.supported) {
 			// BarChart
 			var drawBarChart = SVG('barChartContainer').size('100%', '100%'),
@@ -228,19 +225,9 @@ window.onload = function () {
 						$('.turquoise .tooltip span').stop().animate({"opacity": 0});
 					});
 				});
-
-
-
-				
-
-
-
 		} else {
 			alert('SVG not supported');
 		}
-
-
-
 }
 
 win.scroll(function() {
@@ -282,6 +269,6 @@ function showScreen() {
 }
 
 function shadeColor(color, percent) {   
-    var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, B = (num >> 8 & 0x00FF) + amt, G = (num & 0x0000FF) + amt;
-    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (B<255?B<1?0:B:255)*0x100 + (G<255?G<1?0:G:255)).toString(16).slice(1);
+	var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, B = (num >> 8 & 0x00FF) + amt, G = (num & 0x0000FF) + amt;
+	return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (B<255?B<1?0:B:255)*0x100 + (G<255?G<1?0:G:255)).toString(16).slice(1);
 }
